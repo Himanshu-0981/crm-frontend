@@ -1,7 +1,8 @@
 import React from "react";
+import { PageWrapper } from "../../components";
 
 function AssessmentForm() {
-  return <div>AssessmentForm</div>;
+  return <PageWrapper>AssessmentForm</PageWrapper>;
 }
 
 export default AssessmentForm;

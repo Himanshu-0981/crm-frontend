@@ -1,7 +1,8 @@
 import React from "react";
+import { PageWrapper } from "../../components";
 
 function NewLeads() {
-  return <div>NewLeads</div>;
+  return <PageWrapper>NewLeads</PageWrapper>;
 }
 
 export default NewLeads;

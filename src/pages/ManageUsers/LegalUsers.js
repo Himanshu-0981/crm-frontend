@@ -1,7 +1,8 @@
 import React from "react";
+import { PageWrapper } from "../../components";
 
 function LegalUsers() {
-  return <div>LegalUsers</div>;
+  return <PageWrapper>LegalUsers</PageWrapper>;
 }
 
 export default LegalUsers;

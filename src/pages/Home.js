@@ -1,11 +1,5 @@
-import { SideSection } from "../components";
-
 function Home() {
-  return (
-    <>
-      <SideSection />
-    </>
-  );
+  return <></>;
 }
 
 export default Home;

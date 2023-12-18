@@ -1,7 +1,8 @@
 import React from "react";
+import { PageWrapper } from "../../components";
 
 function Products() {
-  return <div>Products</div>;
+  return <PageWrapper>Products</PageWrapper>;
 }
 
 export default Products;

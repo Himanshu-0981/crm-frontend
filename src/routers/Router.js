@@ -56,7 +56,7 @@ function Router() {
     {
       path: "/dashboard",
       name: "Dashboard",
-      element: Dashboard,
+      element: <Dashboard />,
       icon: <IoIosSpeedometer />,
     },
 
@@ -203,15 +203,18 @@ function Router() {
 
         {/* side menu routes */}
 
-        {sideMenuRoutes?.map((category) =>
-          category?.children?.map((route, childrenIndex) => (
-            <Route
-              key={childrenIndex}
-              path={route?.path}
-              element={route?.element}
-            />
-          ))
-        )}
+        {sideMenuRoutes?.map((category, index) => (
+          <React.Fragment key={index}>
+            <Route path={category?.path} element={category?.element} />
+            {category?.children?.map((route, childrenIndex) => (
+              <Route
+                key={childrenIndex}
+                path={route?.path}
+                element={route?.element}
+              />
+            ))}
+          </React.Fragment>
+        ))}
       </Routes>
     </BrowserRouter>
   );

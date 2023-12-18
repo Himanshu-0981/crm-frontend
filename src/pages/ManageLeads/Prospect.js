@@ -1,7 +1,8 @@
 import React from "react";
+import { PageWrapper } from "../../components";
 
 function Prospect() {
-  return <div>Prospect</div>;
+  return <PageWrapper>Prospect</PageWrapper>;
 }
 
 export default Prospect;

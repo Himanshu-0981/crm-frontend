@@ -1,7 +1,8 @@
 import React from "react";
+import { PageWrapper } from "../../components";
 
 function FollowUpTasks() {
-  return <div>FollowUpTasks</div>;
+  return <PageWrapper>FollowUpTasks</PageWrapper>;
 }
 
 export default FollowUpTasks;

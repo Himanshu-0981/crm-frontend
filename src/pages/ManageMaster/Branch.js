@@ -1,7 +1,8 @@
 import React from "react";
+import { PageWrapper } from "../../components";
 
 function Branch() {
-  return <div>Branch</div>;
+  return <PageWrapper>Branch</PageWrapper>;
 }
 
 export default Branch;

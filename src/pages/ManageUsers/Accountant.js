@@ -1,7 +1,8 @@
 import React from "react";
+import { PageWrapper } from "../../components";
 
 function Accountant() {
-  return <div>Accountant</div>;
+  return <PageWrapper>Accountant</PageWrapper>;
 }
 
 export default Accountant;

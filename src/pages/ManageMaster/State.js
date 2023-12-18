@@ -1,7 +1,8 @@
 import React from "react";
+import { PageWrapper } from "../../components";
 
 function State() {
-  return <div>State</div>;
+  return <PageWrapper>State</PageWrapper>;
 }
 
 export default State;

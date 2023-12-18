@@ -1,7 +1,8 @@
 import React from "react";
+import { PageWrapper } from "../../components";
 
 function Country() {
-  return <div>Country</div>;
+  return <PageWrapper>Country</PageWrapper>;
 }
 
 export default Country;

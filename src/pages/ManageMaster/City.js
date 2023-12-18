@@ -1,8 +1,9 @@
 import React from "react";
+import { PageWrapper } from "../../components";
 
 function City() {
   return (
-    <div>
+    <PageWrapper>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
       assumenda ipsum blanditiis necessitatibus quia sunt nobis, et recusandae
       saepe, tenetur ut dolore tempore labore atque rem perspiciatis,
@@ -110,7 +111,7 @@ function City() {
       consequuntur quod sapiente labore nihil corrupti. Mollitia id inventore
       tempora ea ex accusantium voluptatem, consequatur adipisci praesentium
       nemo illum dignissimos necessitatibus, cumque unde totam dolores. Id.
-    </div>
+    </PageWrapper>
   );
 }
 
