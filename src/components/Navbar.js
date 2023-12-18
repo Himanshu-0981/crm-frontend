@@ -8,6 +8,7 @@ import { RxEnterFullScreen } from "react-icons/rx";
 import { CiSettings } from "react-icons/ci";
 import { MdOutlinePowerSettingsNew } from "react-icons/md";
 
+import { useSideMenuState } from "../contexts/SideMenuState";
 import { logo, mini_logo } from "../assets/images";
 import { Search } from ".";
 
@@ -16,17 +17,24 @@ function Navbar() {
   const [administratorIcon, setAdministratorIcon] = useState(false);
   const [mobileMenuIcon, setMobileMenuIcon] = useState(false);
 
+  const { toggle, setToggle } = useSideMenuState();
+
   const handleSelectedSearch = () => setSelectedSearchIcon(!selectedSearchIcon);
   const handleAdministratorIcon = () =>
     setAdministratorIcon(!administratorIcon);
 
   const handleMobileMenuIconClick = () => setMobileMenuIcon(!mobileMenuIcon);
 
+  const handleMenuClick = () => setToggle(!toggle);
+
   return (
     <React.Fragment>
-      <nav className="relative bg-color_blue  flex items-center justify-between px-4 py-3 ">
+      <nav className="sticky top-0 bg-color_blue  flex items-center justify-between px-4 py-3 ">
         <section className="md:hidden">
-          <HiMenu className="text-white text-2xl xxs:text-3xl cursor-pointer" />
+          <HiMenu
+            onClick={handleMenuClick}
+            className="text-white text-2xl xxs:text-3xl cursor-pointer"
+          />
         </section>
 
         <section className="md:hidden">
@@ -58,7 +66,10 @@ function Navbar() {
             />
           </div>
           <div className="  md:relative flex items-center gap-5 text-white">
-            <HiMenu className=" text-2xl xxs:text-2xl cursor-pointer" />
+            <HiMenu
+              onClick={handleMenuClick}
+              className=" text-2xl xxs:text-2xl cursor-pointer"
+            />
             <RxEnterFullScreen className=" text-2xl xxs:text-xl cursor-pointer" />
             <IoSearch
               className=" text-2xl xxs:text-xl cursor-pointer "
@@ -108,8 +119,6 @@ function Navbar() {
               <p>Logout</p>
             </div>
           </section>
-
-          {/*  */}
         </section>
 
         {/* Mobile view search section and administrator section*/}
