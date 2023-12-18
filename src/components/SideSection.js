@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import { IoIosArrowForward } from "react-icons/io";
@@ -7,19 +7,28 @@ import { useSideMenuState } from "../contexts/SideMenuState";
 
 function SideSection({ routes }) {
   const [activeSection, setActiveSection] = useState(null);
-  const { toggle } = useSideMenuState();
+  const { toggle, setToggle } = useSideMenuState();
 
   const toggleSection = (index) =>
     setActiveSection((prev) => (prev === index ? null : index));
 
+  // whenever the size will change the side menu will be closed automatically
+  const handleResize = () => setToggle(false);
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    // clean up function
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
       <aside
-        className={`${toggle ? "-translate-x-0 w-60 " : ""} 
-       w-96 fixed top-14 -translate-x-96 transition-transform duration-300 md:-translate-x-0 md:w-fit lg:w-60 h-screen bg-color_blue text-white flex-col  md:flex`}
+        className={`${toggle ? "translate-x-0   " : ""} 
+        fixed top-12 xxs:top-[54px] md:top-14 -translate-x-40 transition-transform duration-300 md:-translate-x-0 md:w-fit lg:w-60 h-screen bg-color_blue text-white flex-col  md:flex shadow-md`}
       >
         {routes?.map((route, index) => (
-          <section key={index}>
+          <NavLink to={route?.path} key={index}>
             <div className="relative">
               <section
                 className={`flex justify-between  cursor-pointer duration-150 p-3 items-center gap-6 ${
@@ -29,7 +38,7 @@ function SideSection({ routes }) {
                 }`}
                 onClick={() => toggleSection(index)}
               >
-                <div className="flex gap-4">
+                <section className="flex gap-4">
                   {" "}
                   <div className="text-lg">{route?.icon}</div>{" "}
                   <div
@@ -37,7 +46,7 @@ function SideSection({ routes }) {
                   >
                     {route?.name}
                   </div>
-                </div>
+                </section>
                 <div className={`${toggle ? "" : "hidden"} lg:flex`}>
                   {activeSection === index ? (
                     <IoIosArrowDown />
@@ -57,9 +66,7 @@ function SideSection({ routes }) {
                     <NavLink
                       to={child?.path}
                       key={childIndex}
-                      className={`hover:bg-blue-950 p-3  flex ${
-                        toggle ? "pl-14 " : "pl-2 pr-2"
-                      } `}
+                      className={`hover:bg-blue-950 p-3 pl-14  flex md:pl-2 lg:pl-14`}
                     >
                       <div className="flex justify-start items-center gap-3">
                         <div>{child?.icon} </div>
@@ -70,7 +77,7 @@ function SideSection({ routes }) {
                 </ul>
               )}
             </div>
-          </section>
+          </NavLink>
         ))}
       </aside>
     </>
