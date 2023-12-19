@@ -1,5 +1,7 @@
+import { PageWrapper } from "../components";
+
 function Login() {
-  return <div>Login</div>;
+  return <PageWrapper>Login</PageWrapper>;
 }
 
 export default Login;

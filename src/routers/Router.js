@@ -3,24 +3,24 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 // icons
 
-import { IoIosSpeedometer } from "react-icons/io";
-import { FaDatabase } from "react-icons/fa";
+import { IoIosSpeedometer, IoIosPeople } from "react-icons/io";
 import { BsBoxes } from "react-icons/bs";
-import { FaGlobeAsia } from "react-icons/fa";
-import { IoIosPeople } from "react-icons/io";
 import { ImBook } from "react-icons/im";
-import { RiNewspaperLine } from "react-icons/ri";
+import { RiNewspaperLine, RiRouteFill } from "react-icons/ri";
 import { MdLocationOn } from "react-icons/md";
 import { GiPerson } from "react-icons/gi";
-import { RiRouteFill } from "react-icons/ri";
 import { HiFlag } from "react-icons/hi";
 import { IoBagSharp } from "react-icons/io5";
-import { FaUserCircle } from "react-icons/fa";
 import { TbUserSquare } from "react-icons/tb";
-import { FaBlackTie } from "react-icons/fa";
 import { FiUser } from "react-icons/fi";
 import { PiListBulletsFill } from "react-icons/pi";
 import { HiIdentification } from "react-icons/hi2";
+import {
+  FaDatabase,
+  FaUserCircle,
+  FaGlobeAsia,
+  FaBlackTie,
+} from "react-icons/fa";
 
 import {
   Accountant,
@@ -37,6 +37,7 @@ import {
   LegalUsers,
   Login,
   NewLeads,
+  PageNotFound,
   Products,
   Prospect,
   SalesUser,
@@ -47,7 +48,7 @@ import { Navbar, SideSection } from "../components";
 
 function Router() {
   const routes = [
-    { path: "/", name: "Home", element: <Home /> },
+    { path: "/", name: "Home", element: <Dashboard /> },
     { path: "/login", name: "Login", element: <Login /> },
     { path: "/signup", name: "Signup", element: <Signup /> },
   ];
@@ -202,7 +203,6 @@ function Router() {
         })}
 
         {/* side menu routes */}
-
         {sideMenuRoutes?.map((category, index) => (
           <React.Fragment key={index}>
             <Route path={category?.path} element={category?.element} />
@@ -215,6 +215,9 @@ function Router() {
             ))}
           </React.Fragment>
         ))}
+
+        {/* 404 page not found */}
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   );

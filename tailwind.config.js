@@ -16,6 +16,14 @@ module.exports = {
         xl: "1280px",
         "2xl": "1536px",
       },
+      fontFamily: {
+        montserrat: ["Montserrat", "sans"],
+        "open-sans": ["Open Sans", "sans"],
+      },
+      base: {
+        // setting up the base font for the entire web page
+        font: ["Montserrat", "Open Sans", "sans-serif"],
+      },
     },
   },
   plugins: [],

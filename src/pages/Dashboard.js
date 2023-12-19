@@ -1,11 +1,11 @@
-import { PageWrapper, Calendar, Button } from "../components/index";
+import { PageWrapper, Calendar, Button, PageTitle } from "../components/index";
 import { FaFilter } from "react-icons/fa";
 import { GrPowerReset } from "react-icons/gr";
 
 function Dashboard() {
   return (
     <PageWrapper>
-      <h1 className="text-2xl font-medium text-gray-600">DASHBOARD</h1>
+      <PageTitle title={"DASHBOARD"} />
 
       <section className="sm:flex justify-between bg-white p-3 mt-5 shadow-md rounded-md">
         <Calendar />

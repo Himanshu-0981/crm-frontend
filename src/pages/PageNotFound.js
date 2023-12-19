@@ -1,5 +1,7 @@
+import { PageWrapper } from "../components";
+
 function PageNotFound() {
-  return <h1>page 404</h1>;
+  return <PageWrapper>page 404</PageWrapper>;
 }
 
 export default PageNotFound;
