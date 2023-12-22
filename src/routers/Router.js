@@ -1,7 +1,7 @@
-import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+// import React, { useState } from "react";
+// import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
-// icons
+// // icons
 
 import { IoIosSpeedometer, IoIosPeople } from "react-icons/io";
 import { BsBoxes } from "react-icons/bs";
@@ -22,8 +22,86 @@ import {
   FaBlackTie,
 } from "react-icons/fa";
 
+// import {
+//   Accountant,
+//   AssessmentForm,
+//   Assessments,
+//   Branch,
+//   City,
+//   Country,
+//   Dashboard,
+//   Destination,
+//   EmailTemplate,
+//   FollowUpTasks,
+//   Home,
+//   LegalUsers,
+//   Login,
+//   NewLeads,
+//   PageNotFound,
+//   Products,
+//   Prospect,
+//   SalesUser,
+//   Signup,
+//   State,
+// } from "../pages/index";
+// import { Navbar, SideSection } from "../components";
+// import AddCity from "../pages/ManageMaster/AddCity";
+
+// function Router() {
+//   const [auth, setAuth] = useState(true);
+//   const [isAdmin, setIsAdmin] = useState(true);
+
+//   return (
+//     <BrowserRouter>
+//       {auth ? (
+//         <>
+//           <Navbar />
+//           <SideSection routes={sideMenuRoutes} />
+//         </>
+//       ) : null}
+//       <Routes>
+//         <Route
+//           path="/dashboard"
+//           element={auth ? <Dashboard /> : <Navigate to="/login" />}
+//         />
+
+//         <Route path="/login" element={<Login />} />
+
+//         <Route path="/signup" element={<Signup />} />
+
+//         <Route path="/add-city" element={<AddCity />} />
+
+//         {sideMenuRoutes?.map((category, index) => (
+//           <React.Fragment key={index}>
+//             {category?.children?.map((route, childrenIndex) => (
+//               <Route
+//                 key={childrenIndex}
+//                 path={route?.path}
+//                 element={route?.element}
+//               />
+//             ))}
+//             <Route path={category?.path} element={category?.element} />
+//           </React.Fragment>
+//         ))}
+
+//         {/* 404 page not found */}
+//         <Route path="*" element={<PageNotFound />} />
+//       </Routes>
+//     </BrowserRouter>
+//   );
+// }
+
+// export default Router;
+
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import {
   Accountant,
+  AddBranch,
+  AddCity,
+  AddCountry,
+  AddDestination,
+  AddProduct,
+  AddState,
   AssessmentForm,
   Assessments,
   Branch,
@@ -44,16 +122,35 @@ import {
   Signup,
   State,
 } from "../pages/index";
+
+import ProtectedRoute from "./ProtectedRoute";
+import AdminRoute from "./AdminRoute";
+import React from "react";
 import { Navbar, SideSection } from "../components";
 
 function Router() {
-  const routes = [
-    { path: "/", name: "Home", element: <Dashboard /> },
-    { path: "/login", name: "Login", element: <Login /> },
-    { path: "/signup", name: "Signup", element: <Signup /> },
+  const userSideMenuRoutes = [
+    {
+      path: "/dashboard",
+      name: "Dashboard",
+      element: <Dashboard />,
+      icon: <IoIosSpeedometer />,
+    },
+    {
+      path: "/products",
+      name: "Products",
+      element: <Products />,
+      icon: <IoBagSharp />,
+    },
+    {
+      path: "/leads",
+      name: "leads",
+      element: "",
+      icon: <IoBagSharp />,
+    },
   ];
 
-  const sideMenuRoutes = [
+  const adminSideMenuRoutes = [
     {
       path: "/dashboard",
       name: "Dashboard",
@@ -189,37 +286,59 @@ function Router() {
       ],
     },
   ];
+
+  const isAuthenticated = true;
+  const isAdmin = true;
   return (
-    <BrowserRouter>
-      <Navbar />
-      <SideSection routes={sideMenuRoutes} />
-      <Routes>
-        {routes?.map((route, index) => {
-          return (
-            <React.Fragment key={index}>
-              <Route path={route?.path} element={route?.element} />
-            </React.Fragment>
-          );
-        })}
+    <>
+      <BrowserRouter>
+        {" "}
+        {isAuthenticated && <Navbar />}
+        {isAuthenticated && <SideSection routes={userSideMenuRoutes} />}
+        {isAuthenticated && isAdmin ? (
+          <SideSection routes={adminSideMenuRoutes} />
+        ) : null}
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="*" element={<PageNotFound />} />
 
-        {/* side menu routes */}
-        {sideMenuRoutes?.map((category, index) => (
-          <React.Fragment key={index}>
-            <Route path={category?.path} element={category?.element} />
-            {category?.children?.map((route, childrenIndex) => (
-              <Route
-                key={childrenIndex}
-                path={route?.path}
-                element={route?.element}
-              />
+          {/* Protected Routes  */}
+
+          <Route path="/" element={<ProtectedRoute />}>
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/leads" element={<NewLeads />} />
+          </Route>
+
+          {/* Admin Routes */}
+
+          <Route path="/" element={<AdminRoute />}>
+            {adminSideMenuRoutes?.map((route, index) => (
+              <Route key={index} path={route?.path} element={route?.element}>
+                {route?.children?.map((child, index) => (
+                  <Route
+                    key={index}
+                    path={child?.path}
+                    element={child?.element}
+                  />
+                ))}
+              </Route>
             ))}
-          </React.Fragment>
-        ))}
 
-        {/* 404 page not found */}
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
-    </BrowserRouter>
+            <Route path="/city/add-city" element={<AddCity />} />
+            <Route path="/state/add-state" element={<AddState />} />
+            <Route path="/branch/add-branch" element={<AddBranch />} />
+            <Route
+              path="/destination/add-destination"
+              element={<AddDestination />}
+            />
+            <Route path="/product/add-country" element={<AddCountry />} />
+            <Route path="/product/add-product" element={<AddProduct />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

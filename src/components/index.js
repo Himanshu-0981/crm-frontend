@@ -6,6 +6,10 @@ import Calendar from "./Calendar";
 import Button from "./Button";
 import PageTitle from "./PageTitle";
 import PageHeader from "./PageHeader";
+import Form from "./Form";
+import Table from "./Table";
+import Input from "./Input";
+import Radio from "./Input";
 
 export {
   Navbar,
@@ -16,4 +20,8 @@ export {
   Button,
   PageTitle,
   PageHeader,
+  Form,
+  Table,
+  Input,
+  Radio,
 };

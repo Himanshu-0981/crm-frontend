@@ -9,31 +9,37 @@ import PageNotFound from "./PageNotFound";
 import Dashboard from "./Dashboard";
 
 // Manage Masters
-import City from "./ManageMaster/City";
-import State from "./ManageMaster/State";
-import Branch from "./ManageMaster/Branch";
-import Destination from "./ManageMaster/Destination";
+import City from "./admin/ManageMaster/City";
+import State from "./admin/ManageMaster/State";
+import Branch from "./admin/ManageMaster/Branch";
+import Destination from "./admin/ManageMaster/Destination";
+import AddCity from "./admin/ManageMaster/AddCity";
+import AddState from "./admin/ManageMaster/AddState";
+import AddBranch from "./admin/ManageMaster/AddBranch";
+import AddDestination from "./admin/ManageMaster/AddDestination";
 
 // Manage Leads
-import NewLeads from "./ManageLeads/NewLeads";
-import Prospect from "./ManageLeads/Prospect";
-import FollowUpTasks from "./ManageLeads/FollowUpTasks";
+import NewLeads from "./admin/ManageLeads/NewLeads";
+import Prospect from "./admin/ManageLeads/Prospect";
+import FollowUpTasks from "./admin/ManageLeads/FollowUpTasks";
 
 // Manage Products
-import Country from "./ManageProducts/Country";
-import Products from "./ManageProducts/Products";
+import Country from "./admin/ManageProducts/Country";
+import Products from "./admin/ManageProducts/Products";
+import AddCountry from "./admin/ManageProducts/AddCountry";
+import AddProduct from "./admin/ManageProducts/AddProduct";
 
 // Manage Users
-import SalesUser from "./ManageUsers/SalesUser";
-import Accountant from "./ManageUsers/Accountant";
-import LegalUsers from "./ManageUsers/LegalUsers";
-import Assessments from "./ManageUsers/Assessments";
+import SalesUser from "./admin/ManageUsers/SalesUser";
+import Accountant from "./admin/ManageUsers/Accountant";
+import LegalUsers from "./admin/ManageUsers/LegalUsers";
+import Assessments from "./admin/ManageUsers/Assessments";
 
 // Assessment
-import AssessmentForm from "./Assessment/AssessmentForm";
+import AssessmentForm from "./admin/Assessment/AssessmentForm";
 
 // CMS
-import EmailTemplate from "./CMS/EmailTemplate";
+import EmailTemplate from "./admin/CMS/EmailTemplate";
 
 export {
   Home,
@@ -56,4 +62,10 @@ export {
   Assessments,
   AssessmentForm,
   EmailTemplate,
+  AddCity,
+  AddState,
+  AddBranch,
+  AddDestination,
+  AddCountry,
+  AddProduct,
 };

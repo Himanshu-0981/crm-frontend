@@ -29,7 +29,7 @@ function Navbar() {
 
   return (
     <React.Fragment>
-      <nav className="sticky top-0 bg-color_blue  flex items-center justify-between px-4 py-3 ">
+      <nav className="sticky top-0 bg-color_blue  flex items-center justify-between px-4 py-3 z-50">
         <section className="md:hidden">
           <HiMenu
             onClick={handleMenuClick}

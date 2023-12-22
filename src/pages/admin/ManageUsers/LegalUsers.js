@@ -1,5 +1,5 @@
 import React from "react";
-import { PageWrapper } from "../../components";
+import { PageWrapper } from "../../../components";
 
 function LegalUsers() {
   return <PageWrapper>LegalUsers</PageWrapper>;

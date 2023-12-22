@@ -25,7 +25,7 @@ function SideSection({ routes }) {
     <>
       <aside
         className={`${toggle ? "translate-x-0   " : ""} 
-        fixed top-12 xxs:top-[54px] md:top-14 -translate-x-40 transition-transform duration-300 md:-translate-x-0 md:w-fit lg:w-60 h-screen bg-color_blue text-white flex-col  md:flex shadow-md`}
+        fixed z-50 top-12 xxs:top-[54px] md:top-14 -translate-x-40 transition-transform duration-300 md:-translate-x-0 md:w-fit lg:w-60 h-screen bg-color_blue text-white flex-col  md:flex shadow-md`}
       >
         {routes?.map((route, index) => (
           <NavLink to={route?.path} key={index}>
