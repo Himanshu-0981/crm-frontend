@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, PageHeader, PageWrapper } from "../../../components";
+import { Button, Input, PageHeader, PageWrapper } from "../../../components";
 import { GrPowerReset } from "react-icons/gr";
 import { IoMdSearch } from "react-icons/io";
 import { CiFilter } from "react-icons/ci";
@@ -26,7 +26,7 @@ function State() {
         />
       </section>
 
-      <section className="bg-white mt-10 px-5 py-10">
+      <section className=" bg-white mt-10 px-5 py-10 shadow-md rounded-md">
         <div className="flex justify-between ">
           <div>
             <h1 className="font-open-sans text-xs font-normal text-[#404e67]  ">
@@ -41,44 +41,28 @@ function State() {
         </div>
 
         <div
-          className={`${
+          className={`flex justify-between gap-4 flex-col  mt-3 items-start sm:flex-row sm:items-center  ${
             toggle
               ? "opacity-100 max-h-[500px] transition-opacity transition-max-height duration-300 ease-in-out"
               : "opacity-0 max-h-0 overflow-hidden transition-opacity transition-max-height duration-300 ease-in-out"
           }`}
         >
-          <form className="flex flex-col sm:flex-row gap-4 justify-between mt-5">
-            <section className="flex items-center gap-4">
-              {" "}
-              <div>
-                <input
-                  type="text"
-                  className="border border-gray-400 outline-none py-1 px-2 w-full text-sm rounded-md"
-                  placeholder=" State"
-                />
-              </div>
-              <div>
-                <input
-                  type="text"
-                  className="border border-gray-400 outline-none py-1 px-2 w-full text-sm rounded-md"
-                  placeholder=" Country"
-                />
-              </div>
-            </section>
-
-            <div className="flex items-center gap-2  ">
-              <Button
-                title={"Search"}
-                className={"bg-blue-500"}
-                icon={<IoMdSearch />}
-              />
-              <Button
-                title={"Reset"}
-                className={"bg-blue-500"}
-                icon={<RxReset />}
-              />
-            </div>
-          </form>
+          <div className="flex items-center   gap-2">
+            <Input placeholder="State" />
+            <Input placeholder="Country" />
+          </div>
+          <div className="flex items-center gap-2  ">
+            <Button
+              title={"Search"}
+              className={"bg-blue-500 w-full"}
+              icon={<IoMdSearch />}
+            />
+            <Button
+              title={"Reset"}
+              className={"bg-blue-500"}
+              icon={<RxReset />}
+            />
+          </div>
         </div>
       </section>
     </PageWrapper>

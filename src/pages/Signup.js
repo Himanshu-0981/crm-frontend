@@ -106,7 +106,7 @@ function Signup() {
                 }}
               >
                 {" "}
-                Login
+                Signup
               </p>
             </div>
           </section>

@@ -6,32 +6,32 @@ import { RxReset } from "react-icons/rx";
 import Radio from "../../../components/Radio";
 import { useNavigate } from "react-router-dom";
 
-const AddDestination = () => {
+const AddDesignation = () => {
   const [isActive, setIsActive] = useState(false);
   const handleRadioChange = (value) => setIsActive(value);
 
   const navigate = useNavigate();
-  const goBack = () => navigate("/destination");
+  const goBack = () => navigate("/designation");
   return (
     <PageWrapper>
       <PageHeader
-        title={"Manage destination"}
-        slugTitle1={"destination"}
-        slugTitle2={"add destination"}
-        buttonTitle={"Back To Destination List"}
+        title={"Manage Designation"}
+        slugTitle1={"designation"}
+        slugTitle2={"add designation"}
+        buttonTitle={"Back To Designation List"}
         buttonIcon={<IoIosArrowBack />}
         handleButtonClick={goBack}
       />
-      <section className="font-open-sans mt-10">
+      <section className="font-open-sans  bg-white mt-10 px-5 py-10 shadow-md rounded-md">
         <h1 className="text-lg font-montserrat text-blue-700">
-          Destination Info
+          Designation Info
         </h1>
         <div className="w-full bg-blue-700 h-[1px] mt-2 mb-5"></div>
 
         <div>
           <div className="flex items-center mt-5">
-            <p className="w-32 text-sm text-gray-700">Destination </p>
-            <Input placeholder={"Enter Destination Name"} type={"text"} />
+            <p className="w-32 text-sm text-gray-700">Designation </p>
+            <Input placeholder={"Enter Designation Name"} type={"text"} />
           </div>
           <div className="flex items-center mt-5">
             <p className="w-32 text-sm text-gray-700">Status </p>
@@ -55,4 +55,4 @@ const AddDestination = () => {
   );
 };
 
-export default AddDestination;
+export default AddDesignation;

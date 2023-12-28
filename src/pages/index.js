@@ -1,6 +1,7 @@
 import Home from "./Home";
 import Login from "./Login";
 import Signup from "./Signup";
+import OTP from "./OTP";
 import PageNotFound from "./PageNotFound";
 
 // Side Menu
@@ -12,11 +13,11 @@ import Dashboard from "./Dashboard";
 import City from "./admin/ManageMaster/City";
 import State from "./admin/ManageMaster/State";
 import Branch from "./admin/ManageMaster/Branch";
-import Destination from "./admin/ManageMaster/Destination";
+import Designation from "./admin/ManageMaster/Designation ";
 import AddCity from "./admin/ManageMaster/AddCity";
 import AddState from "./admin/ManageMaster/AddState";
 import AddBranch from "./admin/ManageMaster/AddBranch";
-import AddDestination from "./admin/ManageMaster/AddDestination";
+import AddDesignation from "./admin/ManageMaster/AddDesignation";
 
 // Manage Leads
 import NewLeads from "./admin/ManageLeads/NewLeads";
@@ -34,6 +35,10 @@ import SalesUser from "./admin/ManageUsers/SalesUser";
 import Accountant from "./admin/ManageUsers/Accountant";
 import LegalUsers from "./admin/ManageUsers/LegalUsers";
 import Assessments from "./admin/ManageUsers/Assessments";
+import AddSalesUser from "./admin/ManageUsers/AddSalesUser";
+import AddAccountantUser from "./admin/ManageUsers/AddAccountantUser";
+import AddLegalUser from "./admin/ManageUsers/AddLegalUser";
+import AddAssessmentUser from "./admin/ManageUsers/AddAssessmentUser";
 
 // Assessment
 import AssessmentForm from "./admin/Assessment/AssessmentForm";
@@ -45,12 +50,13 @@ export {
   Home,
   Login,
   Signup,
+  OTP,
   PageNotFound,
   Dashboard,
   City,
   State,
   Branch,
-  Destination,
+  Designation,
   NewLeads,
   Prospect,
   FollowUpTasks,
@@ -65,7 +71,11 @@ export {
   AddCity,
   AddState,
   AddBranch,
-  AddDestination,
+  AddDesignation,
   AddCountry,
   AddProduct,
+  AddSalesUser,
+  AddAccountantUser,
+  AddLegalUser,
+  AddAssessmentUser,
 };

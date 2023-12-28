@@ -61,7 +61,7 @@ const AddState = () => {
         buttonIcon={<IoIosArrowBack />}
         handleButtonClick={goBack}
       />
-      <section className="font-open-sans mt-10">
+      <section className="font-open-sans  bg-white mt-10 px-5 py-10 shadow-md rounded-md">
         <h1 className="text-lg font-montserrat text-blue-700">State Info</h1>
         <div className="w-full bg-blue-700 h-[1px] mt-2 mb-5"></div>
 
@@ -69,7 +69,7 @@ const AddState = () => {
           <div className="flex  items-center">
             <p className="w-32 text-sm text-gray-700">Select Country</p>
             <select
-              className="w-full outline-none border-none text-sm text-gray-500 p-3"
+              className="w-full outline-none border-[0.2px] border-gray-400 focus:border-blue-600 rounded-md  text-sm text-gray-500 p-3"
               value={selectedState}
               onChange={handleChange}
             >

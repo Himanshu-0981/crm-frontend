@@ -10,6 +10,7 @@ import Form from "./Form";
 import Table from "./Table";
 import Input from "./Input";
 import Radio from "./Input";
+import Filters from "./Filters";
 
 export {
   Navbar,
@@ -24,4 +25,5 @@ export {
   Table,
   Input,
   Radio,
+  Filters,
 };

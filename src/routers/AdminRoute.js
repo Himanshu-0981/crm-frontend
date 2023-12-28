@@ -1,6 +1,6 @@
 // AdminRoute.js
 import React, { useState } from "react";
-import { Navigate, Outlet, Route } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { PageWrapper } from "../components";
 
 function AdminRoute() {

@@ -44,12 +44,12 @@ function Dashboard() {
           <Button
             title="Filter"
             icon={<FaFilter />}
-            className="bg-color_blue text-white px-2 py-1 hover:bg-blue-700"
+            className="bg-color_blue text-white px-2 py-1 hover:bg-blue-600 duration-150"
           />
           <Button
             title="Reset"
             icon={<GrPowerReset />}
-            className="bg-color_blue text-white px-2 py-1 hover:bg-blue-700"
+            className="bg-color_blue  text-white px-2 py-1 hover:bg-blue-600 duration-150"
           />
         </div>
       </section>

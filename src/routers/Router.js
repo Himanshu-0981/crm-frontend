@@ -22,85 +22,17 @@ import {
   FaBlackTie,
 } from "react-icons/fa";
 
-// import {
-//   Accountant,
-//   AssessmentForm,
-//   Assessments,
-//   Branch,
-//   City,
-//   Country,
-//   Dashboard,
-//   Destination,
-//   EmailTemplate,
-//   FollowUpTasks,
-//   Home,
-//   LegalUsers,
-//   Login,
-//   NewLeads,
-//   PageNotFound,
-//   Products,
-//   Prospect,
-//   SalesUser,
-//   Signup,
-//   State,
-// } from "../pages/index";
-// import { Navbar, SideSection } from "../components";
-// import AddCity from "../pages/ManageMaster/AddCity";
-
-// function Router() {
-//   const [auth, setAuth] = useState(true);
-//   const [isAdmin, setIsAdmin] = useState(true);
-
-//   return (
-//     <BrowserRouter>
-//       {auth ? (
-//         <>
-//           <Navbar />
-//           <SideSection routes={sideMenuRoutes} />
-//         </>
-//       ) : null}
-//       <Routes>
-//         <Route
-//           path="/dashboard"
-//           element={auth ? <Dashboard /> : <Navigate to="/login" />}
-//         />
-
-//         <Route path="/login" element={<Login />} />
-
-//         <Route path="/signup" element={<Signup />} />
-
-//         <Route path="/add-city" element={<AddCity />} />
-
-//         {sideMenuRoutes?.map((category, index) => (
-//           <React.Fragment key={index}>
-//             {category?.children?.map((route, childrenIndex) => (
-//               <Route
-//                 key={childrenIndex}
-//                 path={route?.path}
-//                 element={route?.element}
-//               />
-//             ))}
-//             <Route path={category?.path} element={category?.element} />
-//           </React.Fragment>
-//         ))}
-
-//         {/* 404 page not found */}
-//         <Route path="*" element={<PageNotFound />} />
-//       </Routes>
-//     </BrowserRouter>
-//   );
-// }
-
-// export default Router;
-
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
   Accountant,
+  AddAccountantUser,
   AddBranch,
   AddCity,
   AddCountry,
-  AddDestination,
+  AddLegalUser,
+  AddDesignation,
   AddProduct,
+  AddSalesUser,
   AddState,
   AssessmentForm,
   Assessments,
@@ -108,19 +40,21 @@ import {
   City,
   Country,
   Dashboard,
-  Destination,
+  Designation,
   EmailTemplate,
   FollowUpTasks,
   Home,
   LegalUsers,
   Login,
   NewLeads,
+  OTP,
   PageNotFound,
   Products,
   Prospect,
   SalesUser,
   Signup,
   State,
+  AddAssessmentUser,
 } from "../pages/index";
 
 import ProtectedRoute from "./ProtectedRoute";
@@ -182,9 +116,9 @@ function Router() {
           icon: <MdLocationOn />,
         },
         {
-          path: "/destination",
-          name: "Destination",
-          element: <Destination />,
+          path: "/designation",
+          name: "Designation",
+          element: <Designation />,
           icon: <RiRouteFill />,
         },
       ],
@@ -301,6 +235,7 @@ function Router() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/otp-verification" element={<OTP />} />
           <Route path="*" element={<PageNotFound />} />
 
           {/* Protected Routes  */}
@@ -330,11 +265,21 @@ function Router() {
             <Route path="/state/add-state" element={<AddState />} />
             <Route path="/branch/add-branch" element={<AddBranch />} />
             <Route
-              path="/destination/add-destination"
-              element={<AddDestination />}
+              path="/designation/add-designation"
+              element={<AddDesignation />}
             />
             <Route path="/product/add-country" element={<AddCountry />} />
             <Route path="/product/add-product" element={<AddProduct />} />
+            <Route path="/users/add-sales-user" element={<AddSalesUser />} />
+            <Route
+              path="/users/add-accountant-user"
+              element={<AddAccountantUser />}
+            />
+            <Route path="/users/add-legal-user" element={<AddLegalUser />} />
+            <Route
+              path="/users/add-assessment-user"
+              element={<AddAssessmentUser />}
+            />
           </Route>
         </Routes>
       </BrowserRouter>

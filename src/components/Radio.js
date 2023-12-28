@@ -1,7 +1,7 @@
 function Radio({ handleChange, value }) {
   return (
     <>
-      <div className="flex items-center text-gray-700 text-sm">
+      <div className="flex items-center text-gray-700 text-sm ">
         <input
           type="radio"
           id="active"

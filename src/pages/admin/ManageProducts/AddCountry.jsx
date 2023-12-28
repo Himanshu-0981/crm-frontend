@@ -22,7 +22,7 @@ const AddCountry = () => {
         buttonIcon={<IoIosArrowBack />}
         handleButtonClick={goBack}
       />
-      <section className="font-open-sans mt-10">
+      <section className="font-open-sans  bg-white mt-10 px-5 py-10 shadow-md rounded-md">
         <h1 className="text-lg font-montserrat text-blue-700">Country Info</h1>
         <div className="w-full bg-blue-700 h-[1px] mt-2 mb-5"></div>
 
